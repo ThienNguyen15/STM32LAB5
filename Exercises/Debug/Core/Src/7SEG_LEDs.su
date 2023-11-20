@@ -1,0 +1,5 @@
+7SEG_LEDs.c:15:6:display7SEG	16	static
+7SEG_LEDs.c:22:6:update7SEG	16	static
+7SEG_LEDs.c:48:6:updateBufferForMode1	16	static
+7SEG_LEDs.c:59:6:updateBufferForIncVal	4	static
+7SEG_LEDs.c:81:6:fsmIncVal	8	static

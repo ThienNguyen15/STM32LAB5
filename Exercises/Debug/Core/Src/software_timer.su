@@ -1,0 +1,4 @@
+software_timer.c:13:5:Current_Timer_Counter	16	static
+software_timer.c:18:5:IsTimerUp	16	static
+software_timer.c:23:6:setTimer	16	static
+software_timer.c:28:6:timerRun	16	static
