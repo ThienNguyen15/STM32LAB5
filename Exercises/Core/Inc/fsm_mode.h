@@ -9,8 +9,10 @@
 #define INC_FSM_MODE_H_
 
 #include "main.h"
+#include "7SEG_LEDs.h"
 #include "global.h"
 
 void fsm_mode();
+void traffic_light(void);
 
 #endif /* INC_FSM_MODE_H_ */

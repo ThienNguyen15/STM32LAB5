@@ -23,8 +23,9 @@ Core/Src/fsm_mode.o: ../Core/Src/fsm_mode.c ../Core/Inc/fsm_mode.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h \
- ../Core/Inc/global.h ../Core/Inc/software_timer.h ../Core/Inc/button.h \
- ../Core/Inc/fsm_mode.h ../Core/Inc/7SEG_LEDs.h ../Core/Inc/LEDs.h
+ ../Core/Inc/7SEG_LEDs.h ../Core/Inc/global.h \
+ ../Core/Inc/software_timer.h ../Core/Inc/button.h ../Core/Inc/fsm_mode.h \
+ ../Core/Inc/LEDs.h
 
 ../Core/Inc/fsm_mode.h:
 
@@ -78,6 +79,8 @@ Core/Src/fsm_mode.o: ../Core/Src/fsm_mode.c ../Core/Inc/fsm_mode.h \
 
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h:
 
+../Core/Inc/7SEG_LEDs.h:
+
 ../Core/Inc/global.h:
 
 ../Core/Inc/software_timer.h:
@@ -85,7 +88,5 @@ Core/Src/fsm_mode.o: ../Core/Src/fsm_mode.c ../Core/Inc/fsm_mode.h \
 ../Core/Inc/button.h:
 
 ../Core/Inc/fsm_mode.h:
-
-../Core/Inc/7SEG_LEDs.h:
 
 ../Core/Inc/LEDs.h:

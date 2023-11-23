@@ -20,6 +20,7 @@
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
 #include "global.h"
+#include "scheduler.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
@@ -95,48 +96,21 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-  // Turn off all 7SEG_LEDs
-  HAL_GPIO_WritePin(GPIOA, 0xF00, SEG_OFF);
 
   setTimer(0, RED);
   setTimer(1, GREEN);
   setTimer(2, SEG_Switch);
   setTimer(3, LED_Blink);
+
+  // Turn off all 7SEG_LEDs
+  HAL_GPIO_WritePin(GPIOA, 0xF00, SEG_OFF);
+
+  SCH_Testing();
+
   while (1)
   {
     /* USER CODE END WHILE */
-	  fsm_mode();
-	  fsmIncVal();
-	  if(IsTimerUp(2))
-	  {
-		  HAL_GPIO_WritePin(GPIOA, 0xF00, SEG_OFF);
-		  switch (seg_index)
-		  {
-		  	  case 0: // 1st 7SEG_LEDs
-		  		  HAL_GPIO_WritePin(en0_GPIO_Port, en0_Pin, SEG_ON);
-		  		  HAL_GPIO_WritePin(GPIOA, en1_Pin | en2_Pin | en3_Pin, SEG_OFF);
-		  		  break;
-		  	  case 1: // 2nd 7SEG_LEDs
-		  		  HAL_GPIO_WritePin(en1_GPIO_Port, en1_Pin, SEG_ON);
-		  		  HAL_GPIO_WritePin(GPIOA, en0_Pin | en2_Pin | en3_Pin, SEG_OFF);
-		  		  break;
-		  	  case 2: // 3rd 7SEG_LEDs
-		  		  HAL_GPIO_WritePin(en2_GPIO_Port, en2_Pin, SEG_ON);
-		  		  HAL_GPIO_WritePin(GPIOA, en0_Pin | en1_Pin | en3_Pin, SEG_OFF);
-		  		  break;
-		  	  case 3: // 4th 7SEG_LEDs
-		  		  HAL_GPIO_WritePin(en3_GPIO_Port, en3_Pin, SEG_ON);
-		  		  HAL_GPIO_WritePin(GPIOA, en0_Pin | en1_Pin | en2_Pin, SEG_OFF);
-		  		  break;
-		  	  default:
-		  		  break;
-		  }
-		  // Display 7SEG_LEDs
-		  update7SEG(seg_index++);
-
-		  // Set switching time
-		  setTimer(2, SEG_Switch);
-	  }
+	  SCH_Dispatch_Task();
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
@@ -273,7 +247,9 @@ static void MX_GPIO_Init(void)
 }
 
 /* USER CODE BEGIN 4 */
-void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
+void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
+{
+	SCH_Update();
 	timerRun();
 	getKeyInput();
 }
