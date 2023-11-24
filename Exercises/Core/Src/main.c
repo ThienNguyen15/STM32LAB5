@@ -58,7 +58,20 @@ static void MX_TIM2_Init(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-
+	//void Task1()
+	//{
+	//    printf("Task1 is running\n");
+	//}
+	//
+	//void Task2()
+	//{
+	//    printf("Task2 is running\n");
+	//}
+	//
+	//void Task3()
+	//{
+	//    printf("Task3 is running\n");
+	//}
 /* USER CODE END 0 */
 
 /**
