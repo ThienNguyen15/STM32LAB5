@@ -1,2 +1,2 @@
 fsm_mode.c:11:6:fsm_mode	8	static
-fsm_mode.c:105:6:traffic_light	8	static
+fsm_mode.c:105:6:seg_leds	8	static

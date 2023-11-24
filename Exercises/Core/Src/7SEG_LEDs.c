@@ -78,7 +78,7 @@ void updateBufferForIncVal()
 	}
 }
 
-void fsmIncVal()
+void fsmIncVal(void)
 {
 	switch (mode)
 	{

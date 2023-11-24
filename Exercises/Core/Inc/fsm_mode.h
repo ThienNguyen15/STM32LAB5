@@ -12,7 +12,7 @@
 #include "7SEG_LEDs.h"
 #include "global.h"
 
-void fsm_mode();
-void traffic_light(void);
+void fsm_mode(void);
+void seg_leds(void);
 
 #endif /* INC_FSM_MODE_H_ */

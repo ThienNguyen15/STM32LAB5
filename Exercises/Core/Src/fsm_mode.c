@@ -8,7 +8,7 @@
 #include "fsm_mode.h"
 GPIO_PinState Blink_Status = LED_ON;
 
-void fsm_mode()
+void fsm_mode(void)
 {
 	switch(mode)
 	{
@@ -102,10 +102,8 @@ void fsm_mode()
 	}
 }
 
-void traffic_light(void)
+void seg_leds(void)
 {
-	  fsm_mode();
-	  fsmIncVal();
 	  if(IsTimerUp(2))
 	  {
 		  HAL_GPIO_WritePin(GPIOA, 0xF00, SEG_OFF);
