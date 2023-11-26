@@ -2748,28 +2748,29 @@ void SCH_Testing()
 {
  8001210:	b580      	push	{r7, lr}
  8001212:	af00      	add	r7, sp, #0
-	SCH_Add_Task(seg_leds, 1, 1);
+//	SCH_Add_Task(timerRun, 0, 1);
+	SCH_Add_Task(fsm_mode, 0, 1);
  8001214:	2201      	movs	r2, #1
- 8001216:	2101      	movs	r1, #1
+ 8001216:	2100      	movs	r1, #0
  8001218:	4807      	ldr	r0, [pc, #28]	; (8001238 <SCH_Testing+0x28>)
  800121a:	f7ff ff6f 	bl	80010fc <SCH_Add_Task>
-	SCH_Add_Task(fsm_mode, 1, 1);
+	SCH_Add_Task(fsmIncVal, 0, 1);
  800121e:	2201      	movs	r2, #1
- 8001220:	2101      	movs	r1, #1
+ 8001220:	2100      	movs	r1, #0
  8001222:	4806      	ldr	r0, [pc, #24]	; (800123c <SCH_Testing+0x2c>)
  8001224:	f7ff ff6a 	bl	80010fc <SCH_Add_Task>
-	SCH_Add_Task(fsmIncVal, 1, 1);
+	SCH_Add_Task(seg_leds, 0, 1);
  8001228:	2201      	movs	r2, #1
- 800122a:	2101      	movs	r1, #1
+ 800122a:	2100      	movs	r1, #0
  800122c:	4804      	ldr	r0, [pc, #16]	; (8001240 <SCH_Testing+0x30>)
  800122e:	f7ff ff65 	bl	80010fc <SCH_Add_Task>
 }
  8001232:	bf00      	nop
  8001234:	bd80      	pop	{r7, pc}
  8001236:	bf00      	nop
- 8001238:	08000c69 	.word	0x08000c69
- 800123c:	08000a25 	.word	0x08000a25
- 8001240:	08000329 	.word	0x08000329
+ 8001238:	08000a25 	.word	0x08000a25
+ 800123c:	08000329 	.word	0x08000329
+ 8001240:	08000c69 	.word	0x08000c69
 
 08001244 <Current_Timer_Counter>:
 
