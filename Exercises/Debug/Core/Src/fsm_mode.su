@@ -1,2 +1,3 @@
 fsm_mode.c:11:6:fsm_mode	8	static
 fsm_mode.c:105:6:seg_leds	8	static
+fsm_mode.c:139:6:set_init	8	static

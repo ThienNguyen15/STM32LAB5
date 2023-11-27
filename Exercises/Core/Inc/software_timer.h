@@ -14,6 +14,6 @@
 int Current_Timer_Counter(int timer);
 int IsTimerUp(int timer);
 void setTimer(int timer, int duration);
-void timerRun();
+void timerRun(void);
 
 #endif /* INC_SOFTWARE_TIMER_H_ */

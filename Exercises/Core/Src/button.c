@@ -14,7 +14,8 @@ int isButtonPressed(int button)
 	return 0;
 }
 
-void getKeyInput(){
+void getKeyInput()
+{
 	for(int button = 0; button < BUTTONS; button++)
 	{
 		KeyReg[button][0] = KeyReg[button][1];

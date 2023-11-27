@@ -110,14 +110,7 @@ int main(void)
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
 
-  setTimer(0, RED);
-  setTimer(1, GREEN);
-  setTimer(2, SEG_Switch);
-  setTimer(3, LED_Blink);
-
-  // Turn off all 7SEG_LEDs
-  HAL_GPIO_WritePin(GPIOA, 0xF00, SEG_OFF);
-
+  SCH_Init();
   SCH_Testing();
 
   while (1)
@@ -262,8 +255,8 @@ static void MX_GPIO_Init(void)
 /* USER CODE BEGIN 4 */
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 {
-	SCH_Update();
 	timerRun();
+	SCH_Update();
 	getKeyInput();
 }
 /* USER CODE END 4 */

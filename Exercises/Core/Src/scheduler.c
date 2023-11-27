@@ -163,7 +163,7 @@ void SCH_Update(void)
 
 void SCH_Testing()
 {
-//	SCH_Add_Task(timerRun, 0, 1);
+	SCH_Add_Task(set_init, 0, 0);
 	SCH_Add_Task(fsm_mode, 0, 1);
 	SCH_Add_Task(fsmIncVal, 0, 1);
 	SCH_Add_Task(seg_leds, 0, 1);

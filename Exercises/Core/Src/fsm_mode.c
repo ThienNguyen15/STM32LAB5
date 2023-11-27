@@ -135,3 +135,14 @@ void seg_leds(void)
 		  setTimer(2, SEG_Switch);
 	  }
 }
+
+void set_init(void)
+{
+	  setTimer(0, RED);
+	  setTimer(1, GREEN);
+	  setTimer(2, SEG_Switch);
+	  setTimer(3, LED_Blink);
+
+	  // Turn off all 7SEG_LEDs
+	  HAL_GPIO_WritePin(GPIOA, 0xF00, SEG_OFF);
+}

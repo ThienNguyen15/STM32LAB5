@@ -14,5 +14,6 @@
 
 void fsm_mode(void);
 void seg_leds(void);
+void set_init(void);
 
 #endif /* INC_FSM_MODE_H_ */
