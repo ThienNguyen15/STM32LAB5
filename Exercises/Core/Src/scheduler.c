@@ -69,31 +69,31 @@ void DeleteTask(struct Node **head)
     free(current);
 }
 
-void ClearList(struct Node **head)
-{
-    while (*head != NULL)
-        DeleteTask(head);
-}
+//void ClearList(struct Node **head)
+//{
+//    while (*head != NULL)
+//        DeleteTask(head);
+//}
 
-void DeleteTaskID(struct Node **head, uint32_t taskID)
-{
-    struct Node *current = *head;
-    struct Node *prev = NULL;
-
-    while (current != NULL && current->data.TaskID != taskID)
-    {
-        prev = current;
-        current = current->next;
-    }
-
-    if (current == NULL)
-        return;
-    if (prev == NULL)
-        DeleteTask(head);
-    else
-        prev->next = current->next;
-    free(current);
-}
+//void DeleteTaskID(struct Node **head, uint32_t taskID)
+//{
+//    struct Node *current = *head;
+//    struct Node *prev = NULL;
+//
+//    while (current != NULL && current->data.TaskID != taskID)
+//    {
+//        prev = current;
+//        current = current->next;
+//    }
+//
+//    if (current == NULL)
+//        return;
+//    if (prev == NULL)
+//        DeleteTask(head);
+//    else
+//        prev->next = current->next;
+//    free(current);
+//}
 
 // Scheduler
 static int id = 0;
@@ -101,7 +101,8 @@ static struct Node *head = NULL;
 
 void SCH_Init()
 {
-    ClearList(&head);
+//    ClearList(&head);
+    head = NULL;
     id = 0;
 }
 
@@ -117,12 +118,12 @@ void SCH_Add_Task(void (*pTask)(), uint32_t Delay, uint32_t Period)
     id++;
 }
 
-void SCH_Delete_Task(uint32_t taskID)
-{
-    DeleteTaskID(&head, taskID);
-}
+//void SCH_Delete_Task(uint32_t taskID)
+//{
+//    DeleteTaskID(&head, taskID);
+//}
 
-void SCH_Dispatch_Task(void)
+void SCH_Dispatch_Tasks(void)
 {
     if (head == NULL)
         return;
@@ -143,6 +144,10 @@ void SCH_Dispatch_Task(void)
             AddTask(&head, RenewTask);
         }
     }
+
+	// Enter low-power mode (Sleep mode). The MCU will wake up on the next interrupt
+	HAL_PWR_EnterSLEEPMode(PWR_MAINREGULATOR_ON, PWR_SLEEPENTRY_WFI);
+
 //    struct Node *list = head;
 //    while (list != NULL)
 //    {
@@ -164,6 +169,14 @@ void SCH_Update(void)
 void SCH_Testing()
 {
 	SCH_Add_Task(set_init, 0, 0);
+
+//	SCH_Add_Task(timerRun, 0, 1);
+
+//	SCH_Add_Task(timerRun0, 0, 1);
+//	SCH_Add_Task(timerRun1, 0, 1);
+//	SCH_Add_Task(timerRun2, 0, 1);
+//	SCH_Add_Task(timerRun3, 0, 1);
+
 	SCH_Add_Task(fsm_mode, 0, 1);
 	SCH_Add_Task(fsmIncVal, 0, 1);
 	SCH_Add_Task(seg_leds, 0, 1);

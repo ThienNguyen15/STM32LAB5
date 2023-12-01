@@ -19,12 +19,11 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
-#include "global.h"
-#include "scheduler.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+#include "global.h"
+#include "scheduler.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -72,6 +71,14 @@ static void MX_TIM2_Init(void);
 	//{
 	//    printf("Task3 is running\n");
 	//}
+
+void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
+{
+	timerRun();
+	SCH_Update();
+	getKeyInput();
+}
+
 /* USER CODE END 0 */
 
 /**
@@ -116,7 +123,7 @@ int main(void)
   while (1)
   {
     /* USER CODE END WHILE */
-	  SCH_Dispatch_Task();
+	  SCH_Dispatch_Tasks();
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
@@ -253,12 +260,7 @@ static void MX_GPIO_Init(void)
 }
 
 /* USER CODE BEGIN 4 */
-void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
-{
-	timerRun();
-	SCH_Update();
-	getKeyInput();
-}
+
 /* USER CODE END 4 */
 
 /**

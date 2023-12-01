@@ -16,4 +16,9 @@ int IsTimerUp(int timer);
 void setTimer(int timer, int duration);
 void timerRun(void);
 
+void timerRun0(void);
+void timerRun1(void);
+void timerRun2(void);
+void timerRun3(void);
+
 #endif /* INC_SOFTWARE_TIMER_H_ */

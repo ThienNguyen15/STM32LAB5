@@ -1,11 +1,8 @@
 scheduler.c:11:14:CreateNode	16	static
 scheduler.c:26:6:AddTask	32	static
 scheduler.c:63:6:DeleteTask	24	static
-scheduler.c:72:6:ClearList	16	static
-scheduler.c:78:6:DeleteTaskID	24	static
-scheduler.c:102:6:SCH_Init	8	static
-scheduler.c:108:6:SCH_Add_Task	56	static
-scheduler.c:120:6:SCH_Delete_Task	16	static
-scheduler.c:125:6:SCH_Dispatch_Task	40	static
-scheduler.c:154:6:SCH_Update	4	static
-scheduler.c:164:6:SCH_Testing	8	static
+scheduler.c:102:6:SCH_Init	4	static
+scheduler.c:109:6:SCH_Add_Task	56	static
+scheduler.c:126:6:SCH_Dispatch_Tasks	40	static
+scheduler.c:159:6:SCH_Update	4	static
+scheduler.c:169:6:SCH_Testing	8	static

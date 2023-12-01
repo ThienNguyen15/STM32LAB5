@@ -53,7 +53,7 @@ void SCH_Add_Task(void (*pTask)(), uint32_t Delay, uint32_t Period);
 
 void SCH_Delete_Task(uint32_t taskID);
 
-void SCH_Dispatch_Task(void);
+void SCH_Dispatch_Tasks(void);
 
 void SCH_Update(void);
 
