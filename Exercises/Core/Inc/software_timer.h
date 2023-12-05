@@ -2,7 +2,7 @@
  * software_timer.h
  *
  *  Created on: Nov 20, 2023
- *      Author: KAI
+ *      Author: Nguyen Quang Thien	- 2152994
  */
 
 #ifndef INC_SOFTWARE_TIMER_H_
