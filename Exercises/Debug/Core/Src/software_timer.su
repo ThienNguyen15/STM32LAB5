@@ -1,8 +1,8 @@
-software_timer.c:13:5:Current_Timer_Counter	16	static
-software_timer.c:18:5:IsTimerUp	16	static
-software_timer.c:23:6:setTimer	16	static
-software_timer.c:29:6:timerRun	16	static
-software_timer.c:42:6:timerRun0	4	static
-software_timer.c:52:6:timerRun1	4	static
-software_timer.c:62:6:timerRun2	4	static
-software_timer.c:72:6:timerRun3	4	static
+software_timer.c:14:5:Current_Timer_Counter	16	static
+software_timer.c:19:5:IsTimerUp	16	static
+software_timer.c:24:6:setTimer	16	static
+software_timer.c:30:6:timerRun	16	static
+software_timer.c:43:6:timerRun0	4	static
+software_timer.c:53:6:timerRun1	4	static
+software_timer.c:63:6:timerRun2	4	static
+software_timer.c:73:6:timerRun3	4	static
